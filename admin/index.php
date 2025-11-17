@@ -6,7 +6,7 @@ require_once '../database.php';
 $daftar=pendaftar();
 $lolos=lulus();
 $gagal=gagal();
-$pendaftar=lulus()+pendaftar()+gagal();
+$pendaftar=siswa_daftar();
 $jurusan=jurusan();
 ?>
 <div class="container_admin">
@@ -29,7 +29,9 @@ $jurusan=jurusan();
     <div class="admin_jurusan">
         <?php foreach($jurusan as $data): ?>
         <div>
-            <h3><?=$data['NAMA_JURUSAN']?></h3>
+            <h3><?=$data['NAMA_JURUSAN']?></h3><hr>
+
+            <h4><?= count(siswa_jurusan($data['NAMA_JURUSAN'])) ?> Siswa</h4>
         </div>
         <?php endforeach; ?>
     </div>

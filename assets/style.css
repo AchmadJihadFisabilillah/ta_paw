@@ -43,7 +43,6 @@ a {
 
 .nav button:hover {
   background-color: #83b3ea;
-  background-color: #bbdefb;
 }
 .nav {
   padding: 0rem 1rem;
@@ -149,6 +148,9 @@ footer a:href {
 .login p {
   padding: 15px;
 }
+.login a{
+  color: #1565c0;
+}
 
 /* Register */
 
@@ -178,11 +180,10 @@ footer a:href {
   padding: 12px;
   height: 35px;
   font-size: 14px;
-  width: 400px;
+  width: 100%;
   box-sizing: border-box;
   margin-top: 3px;
   margin-bottom: 10px;
-  align-items: center;
 }
 
 .register button {
@@ -195,6 +196,9 @@ footer a:href {
   font-weight: bold;
   cursor: pointer;
   margin-top: 15px;
+}
+.register a{
+  color: #2196f3;
 }
 footer p,
 footer li {
@@ -234,8 +238,6 @@ footer li {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 .dashboard button {
-  background: #bbdefb;
-
   background: #2196f3;
   border: none;
   padding: 12px 25px;
@@ -248,8 +250,9 @@ footer li {
   color: #6aa7ec;
 }
 
-.dashboard a:hover {
+.dashboard button:hover {
   color: white;
+  background: #bbdefb;
 }
 .dashboard p {
   font-size: 1.1rem;
@@ -338,6 +341,9 @@ footer li {
   border-radius: 5px;
   /* cursor: pointer; */
   /* transition: 0.2s; */
+}
+.jurusan button:hover{
+  background-color: #83b3ea;
 }
 .jurusan > button {
   display: block;
@@ -498,6 +504,16 @@ footer li {
   color: white;
   font-weight: bold;
 }
+.pendaftar button {
+  padding: 8px 15px;
+  margin: 5px;
+  border: none;
+  background-color: #2196f3;
+  color: white;
+  border-radius: 5px;
+  /* cursor: pointer; */
+  /* transition: 0.2s; */
+}
 /* Form Pendaftaran */
 .form_pendaftaran {
   font-family: sans-serif;
@@ -634,7 +650,6 @@ footer li {
   /* background-color: white; */
   gap: 5%;
   text-align: center;
-  width: 85%;
   /* margin-top: 10%; */
 }
 .dashboard_admin div {
@@ -649,13 +664,16 @@ footer li {
 .admin_jurusan{
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  gap: 5%;
+  flex-wrap: wrap;
+  justify-content: space-between;
   text-align: center;
+  gap: 20px;
 }
 .admin_jurusan>div{
   background-color: white;
   padding: 20px;
+  border-radius: 10px;
+  width: 150px;
 }
 .admin_jurusan h3{
   color: #1565c0;

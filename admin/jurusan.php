@@ -17,8 +17,16 @@
             <td><?php echo $data['NAMA_JURUSAN']?></td>
             <td><?php echo $data['KUOTA_JURUSAN']?></td>
             <td>
-                <button name="edit"><a href="edit_jurusan.php?ID_JURUSAN=<?=$data['ID_JURUSAN']?>">edit</a></button>
-                <button name="hapus"><a href="hapus_jurusan.php?ID_JURUSAN=<?=$data['ID_JURUSAN']?>">hapus</a></button></button>
+                <a href="edit_jurusan.php?ID_JURUSAN=<?=$data['ID_JURUSAN']?>">
+                    <button name="edit">
+                        edit
+                    </button>
+                </a>
+                <a href="hapus_jurusan.php?ID_JURUSAN=<?=$data['ID_JURUSAN']?>">
+                    <button name="hapus">
+                        hapus
+                    </button>
+                </a>
             </td>
         </tr>
         <?php endforeach; ?>
