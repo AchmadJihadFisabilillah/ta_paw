@@ -15,6 +15,7 @@
 ?>
 <div class="tambah_jurusan">
     <div>
+        <form method="POST">
         <h2>Tambah jurusan</h2>
         <table>
             <tr>
@@ -35,5 +36,6 @@
                 </td>
             </tr>
         </table>
+        </form>
      </div>
 </div>
