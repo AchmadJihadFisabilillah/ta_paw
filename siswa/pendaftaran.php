@@ -17,30 +17,30 @@ $tgl_lahir = '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $nama_siswa = $_POST['nama_siswa'] ?? '';
-    $nisn = $_POST['nisn'] ?? '';
-    $jenis_kelamin = $_POST['jenis_kelamin'] ?? '';
-    $agama = $_POST['agama'] ?? '';
-    $tgl_lahir = $_POST['tanggal_lahir'] ?? '';
-    $tempat_lahir = $_POST['tempat_lahir'] ?? '';
-    $alamat_siswa = $_POST['alamat_siswa'] ?? '';
-    $id_jurusan = $_POST['id_jurusan'] ?? '';
-    $no_hp_siswa = $_POST['no_hp_siswa'] ?? '';
-    $kebutuhan = $_POST['kebutuhan'] ?? '';
+    $nama_siswa = htmlspecialchars( $_POST['nama_siswa'] ?? '');
+    $nisn = htmlspecialchars( $_POST['nisn'] ?? '');
+    $jenis_kelamin = htmlspecialchars( $_POST['jenis_kelamin'] ?? '');
+    $agama = htmlspecialchars( $_POST['agama'] ?? '');
+    $tgl_lahir = htmlspecialchars( $_POST['tanggal_lahir'] ?? '');
+    $tempat_lahir = htmlspecialchars( $_POST['tempat_lahir'] ?? '');
+    $alamat_siswa = htmlspecialchars( $_POST['alamat_siswa'] ?? '');
+    $id_jurusan = htmlspecialchars( $_POST['id_jurusan'] ?? '');
+    $no_hp_siswa = htmlspecialchars( $_POST['no_hp_siswa'] ?? '');
+    $kebutuhan = htmlspecialchars( $_POST['kebutuhan'] ?? '');
 
-    $nama_ayah = $_POST['nama_ayah'] ?? '';
-    $keadaan_ayah = $_POST['keadaan_ayah'] ?? '';
-    $alamat_ayah = $_POST['alamat_ayah'] ?? '';
-    $no_hp_ayah = $_POST['no_hp_ayah'] ?? '';
-    $pekerjaan_ayah = $_POST['pekerjaan_ayah'] ?? '';
-    $gaji_ayah = $_POST['gaji_ayah'] ?? '';
+    $nama_ayah = htmlspecialchars( $_POST['nama_ayah'] ?? '');
+    $keadaan_ayah = htmlspecialchars( $_POST['keadaan_ayah'] ?? '');
+    $alamat_ayah = htmlspecialchars( $_POST['alamat_ayah'] ?? '');
+    $no_hp_ayah = htmlspecialchars( $_POST['no_hp_ayah'] ?? '');
+    $pekerjaan_ayah = htmlspecialchars( $_POST['pekerjaan_ayah'] ?? '');
+    $gaji_ayah = htmlspecialchars( $_POST['gaji_ayah'] ?? '');
 
-    $nama_ibu = $_POST['nama_ibu'] ?? '';
-    $keadaan_ibu = $_POST['keadaan_ibu'] ?? '';
-    $alamat_ibu = $_POST['alamat_ibu'] ?? '';
-    $no_hp_ibu = $_POST['no_hp_ibu'] ?? '';
-    $pekerjaan_ibu = $_POST['pekerjaan_ibu'] ?? '';
-    $gaji_ibu = $_POST['gaji_ibu'] ?? '';
+    $nama_ibu = htmlspecialchars( $_POST['nama_ibu'] ?? '');
+    $keadaan_ibu = htmlspecialchars( $_POST['keadaan_ibu'] ?? '');
+    $alamat_ibu = htmlspecialchars( $_POST['alamat_ibu'] ?? '');
+    $no_hp_ibu = htmlspecialchars( $_POST['no_hp_ibu'] ?? '');
+    $pekerjaan_ibu = htmlspecialchars( $_POST['pekerjaan_ibu'] ?? '');
+    $gaji_ibu = htmlspecialchars( $_POST['gaji_ibu'] ?? '');
 
     $file_kk = $_FILES['kk']['name'] ?? null;
     $file_akte = $_FILES['akte']['name'] ?? null;
@@ -82,14 +82,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     val_required($errors, 'nama_ayah', $nama_ayah, 'Nama Ayah wajib diisi.');
     val_alpha($errors, 'nama_ayah', $nama_ayah, 'Nama Ayah harus berupa huruf dan spasi.'); 
 
-    val_required($errors, 'keadaan_ayah', $keadaan_ayah, 'Keadaan Ayah wajib dipilih.');
-
-    val_required($errors, 'alamat_ayah', $alamat_ayah, 'Alamat Ayah wajib diisi.');
-    val_alphanumeric($errors, 'alamat_ayah', $alamat_ayah, 'Alamat Ayah harus berupa huruf dan spasi.'); 
-
-    val_required($errors, 'no_hp_ayah', $no_hp_ayah, 'No HP Ayah wajib diisi.');
-    val_numeric($errors, 'no_hp_ayah', $no_hp_ayah, 'No HP Ayah harus berupa angka.');
-
     val_required($errors, 'pekerjaan_ayah', $pekerjaan_ayah, 'Pekerjaan Ayah wajib diisi.');
     val_alpha($errors, 'pekerjaan_ayah', $pekerjaan_ayah, 'Pekerjaan Ayah harus berupa huruf dan spasi.');
 
@@ -97,14 +89,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     val_required($errors, 'nama_ibu', $nama_ibu, 'Nama Ibu wajib diisi.');
     val_alpha($errors, 'nama_ibu', $nama_ibu, 'Nama Ibu harus berupa huruf dan spasi.'); 
-
-    val_required($errors, 'keadaan_ibu', $keadaan_ibu, 'Keadaan Ibu wajib dipilih.');
-
-    val_required($errors, 'alamat_ibu', $alamat_ibu, 'Alamat Ibu wajib diisi.');
-    val_alphanumeric($errors, 'alamat_ibu', $alamat_ibu, 'Alamat Ibu harus berupa huruf dan spasi.'); 
-
-    val_required($errors, 'no_hp_ibu', $no_hp_ibu, 'No HP Ibu wajib diisi.');
-    val_numeric($errors, 'no_hp_ibu', $no_hp_ibu, 'No HP Ibu harus berupa angka.');
 
     val_required($errors, 'pekerjaan_ibu', $pekerjaan_ibu, 'Pekerjaan Ibu wajib diisi.');
 
@@ -274,7 +258,7 @@ $kebutuhan=kebutuhan();
         </div>
         
         <div class="form_isi">
-            <label for="pas_foto">Foto Pas Siswa (Upload) : (Max ukuran file 5 mb jpg,png,tiff.) <span class="wajib">*</span></label>
+            <label for="pas_foto">Foto Pas Siswa (Upload) : (Max ukuran file 5 mb jpg,jpeg,png.) <span class="wajib">*</span></label>
             <input type="file" 
                 id="pas_foto" 
                 name="foto" 
@@ -295,33 +279,24 @@ $kebutuhan=kebutuhan();
         </div>
 
         <div class="form_isi">
-                <label for="">Keadaan Ayah : <span class="wajib">*</span></label>
+                <label for="">Keadaan Ayah :</label>
                 <div class="radio-group-horizontal">
                     <input type="radio" id="masih_hidup" name="keadaan_ayah" value="masih hidup">
                     <label for="masih hidup">Masih Hidup</label>
                     
                     <input type="radio" id="sudah_tidak_ada" name="keadaan_ayaha">
                     <label for="sta">Sudah Tidak Ada</label>
-                    <?php if(!empty($errors['keadaan'])): ?>
-            <span class="error"><?= $errors['keadaan'] ?></span>
-            <?php endif; ?>
                 </div>
         </div>
 
         <div class="form_isi">
-            <label for="">Alamat Ayah : <span class="wajib">*</span></label>
+            <label for="">Alamat Ayah :</label>
             <input type="text" id="alamat_ayah" name="alamat_ayah" placeholder="Alamat Ayah">
-            <?php if(!empty($errors['alamat_ayah'])): ?>
-            <span class="error"><?= $errors['alamat_ayah'] ?></span>
-            <?php endif; ?>
         </div>
 
         <div class="form_isi">
-            <label for="">No Telepon Ayah : <span class="wajib">*</span></label>
+            <label for="">No Telepon Ayah :</label>
             <input type="text" id="no_hp_ayah" name="no_hp_ayah" placeholder="No Hp Ayah">
-            <?php if(!empty($errors['no_hp_ayah'])): ?>
-            <span class="error"><?= $errors['no_hp_ayah'] ?></span>
-            <?php endif; ?>
         </div>
 
         <div class="form_isi">
@@ -366,32 +341,23 @@ $kebutuhan=kebutuhan();
         </div>
 
         <div class="form_isi">
-            <label for="">Keadaan Ibu : <span class="wajib">*</span></label>
+            <label for="">Keadaan Ibu :</label>
                 <div class="radio-group-horizontal">
                     <input type="radio" id="masih_hidup" name="kedaan_ibu" value="masih hidup">
                     <label for="masih hidup">Masih Hidup</label>
                     <input type="radio" id="sudah_tidak_ada" name="keadaan_ibu" value="sta">
                     <label for="sta">Sudah Tidak Ada</label>
-                    <?php if(!empty($errors['keadaan_ibu'])): ?>
-            <span class="error"><?= $errors['keadaan_ibu'] ?></span>
-            <?php endif; ?>
                 </div>
         </div>
 
         <div class="form_isi">
-            <label for="">Alamat Ibu : <span class="wajib">*</span></label>
+            <label for="">Alamat Ibu :</label>
             <input type="text" id="alamat_ibu" name="alamat_ibu" placeholder="Alamat Ibu">
-            <?php if(!empty($errors['alamat_ibu'])): ?>
-            <span class="error"><?= $errors['alamat_ibu'] ?></span>
-            <?php endif; ?>
         </div>
 
         <div class="form_isi">
-            <label for="">No Telepon Ibu : <span class="wajib">*</span></label>
+            <label for="">No Telepon Ibu :</label>
             <input type="text" id="no_hp_ibu" name="no_hp_ibu" placeholder="No Hp Ibu">
-            <?php if(!empty($errors['no_hp_ibu'])): ?>
-            <span class="error"><?= $errors['no_hp_ibu'] ?></span>
-            <?php endif; ?>
         </div>
 
         <div class="form_isi">

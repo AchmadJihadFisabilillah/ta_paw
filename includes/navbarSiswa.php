@@ -1,6 +1,5 @@
 <div class="nav">
     <div>
-
         <ul class="nav-menu">
             <li class="dropdown">
                 <a href="../siswa/index.php" class="nav-link">Beranda ▾</a>
@@ -14,7 +13,7 @@
         </ul>
         <ul class="nav-menu">
             <li class="dropdown">
-            <a href="../siswa/index.php" class="nav-link">Bagian Siswa ▾</a>
+            <a href="../siswa/index.php" class="nav-link">Dashboard Siswa ▾</a>
             <ul class="dropdown-content">
                 <li><a href="#vimisi">Jurusan</a></li>
                 <li><a href="../siswa/riwayat_pendaftaran.php">Riwayat Pendaftaran</a></li>
@@ -24,6 +23,5 @@
     </div>
 	<ul>
 		<li><a href="../siswa/profil_siswa.php"><button>Profil</button></a></li>
-		<li><a href="../logout.php"><button>logout</button></a></li>
 	</ul>
 </div>

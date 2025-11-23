@@ -21,7 +21,7 @@
 <div class="tambah_jurusan">
     <div>
         <form method="POST">
-        <h2>Tambah jurusan</h2>
+        <h2>Tambah Kebutuhan</h2>
         <table>
             <tr>
                 <td>
