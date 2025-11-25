@@ -25,3 +25,4 @@
 		<li><a href="../siswa/profil_siswa.php"><button>Profil</button></a></li>
 	</ul>
 </div>
+</header>
