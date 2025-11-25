@@ -147,18 +147,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-<!doctype html>
-<html lang="id">
-<head>
-    <meta charset="utf-8">
-    <title>Edit Profil</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-
-    <!-- style.css utama situsmu -->
-    <link rel="stylesheet" href="../style.css">
-</head>
-<body>
-
 <div class="profile-card"><!-- pakai card penuh layar putih yang sudah kamu buat -->
     <div class="avatar-wrap">
         <?php if ($currentFoto && file_exists(__DIR__ . "/uploads/" . $currentFoto)): ?>
@@ -185,7 +173,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="error" style="margin-bottom:10px;"><?php echo $errors['global']; ?></div>
     <?php endif; ?>
 
-    <form action="" method="post" enctype="multipart/form-data" style="width:100%;display:flex;flex-direction:column;align-items:center;">
+    <form method="post" enctype="multipart/form-data" style="width:100%;display:flex;flex-direction:column;align-items:center;">
 
         <!-- Username -->
         <div class="profile-label">Username</div>

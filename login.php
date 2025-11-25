@@ -39,7 +39,7 @@ require_once 'includes/navbar.php';
 ?>
 <!-- form login -->
 <div class="login">
-	<form action="" method="POST">
+	<form method="POST">
 			<h1>Login</h1>
             <table>
                 <tr>

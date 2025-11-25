@@ -1,3 +1,4 @@
+<!-- halaman untuk menampilkan daftar kebutuhan -->
 <?php
     require_once '../database.php';
     require_once '../includes/header.php';
@@ -19,14 +20,16 @@
             <td><?php echo $data['NAMA_KEBUTUHAN']?></td>
             <td>
                 <a href="hapus_kebutuhan.php?ID_KEBUTUHAN=<?=$data['ID_KEBUTUHAN']?>">
-                    <button name="hapus">
-                        Hapus
-                    </button>
+                    Hapus
                 </a>
             </td>
         </tr>
         <?php endforeach; ?>
     </table>
+<<<<<<< HEAD
     <a href="tambah_kebutuhan.php"><button>Tambah Kebutuhan</button></a>
     </div>
+=======
+    <a href="tambah_kebutuhan.php">Tambah Kebutuhan</a>
+>>>>>>> 7e3e456c78ea83d38f1d37f80c88a4259aa52265
 </div>

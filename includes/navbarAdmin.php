@@ -11,3 +11,4 @@
 		<li><a href="../logout.php"><button>logout</button></a></li>
 	</ul>
 </div>
+</header>

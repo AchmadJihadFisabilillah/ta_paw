@@ -12,3 +12,4 @@
 		<li><a href="login.php"><button>Login</button></a></li>
 	</ul>
 </div>
+</header>
