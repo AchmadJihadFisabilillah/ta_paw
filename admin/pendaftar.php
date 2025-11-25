@@ -26,14 +26,10 @@ $daftar=pendaftar();
                 <td><?=$row['KET_STATUS']?></td>
                 <td>
                     <a href="edit_status.php?ID_PENDAFTARAN=<?=$row['ID_PENDAFTARAN']?>&kondisi=lulus">
-                        <button name="lulus">
                             Lulus
-                        </button>
                     </a>
                     <a href="edit_status.php?ID_PENDAFTARAN=<?=$row['ID_PENDAFTARAN']?>&kondisi=gagal">
-                        <button name="gagal">
                             Tidak Lulus
-                        </button>
                     </a>
                 </td>
             </tr>

@@ -19,13 +19,11 @@
             <td><?php echo $data['NAMA_KEBUTUHAN']?></td>
             <td>
                 <a href="hapus_kebutuhan.php?ID_KEBUTUHAN=<?=$data['ID_KEBUTUHAN']?>">
-                    <button name="hapus">
-                        Hapus
-                    </button>
+                    Hapus
                 </a>
             </td>
         </tr>
         <?php endforeach; ?>
     </table>
-    <a href="tambah_kebutuhan.php"><button>Tambah Kebutuhan</button></a>
+    <a href="tambah_kebutuhan.php">Tambah Kebutuhan</a>
 </div>

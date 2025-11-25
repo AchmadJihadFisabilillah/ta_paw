@@ -21,18 +21,14 @@
             <td><?= $data['KUOTA_JURUSAN'] ?></td>
             <td>
                 <a href="edit_jurusan.php?ID_JURUSAN=<?=$data['ID_JURUSAN']?>&KUOTA_JURUSAN=<?=$data['KUOTA_JURUSAN']?>">
-                    <button name="edit">
-                        Edit
-                    </button>
+                    Edit
                 </a>
                 <a href="hapus_jurusan.php?ID_JURUSAN=<?=$data['ID_JURUSAN']?>">
-                    <button name="hapus">
-                        Hapus
-                    </button>
+                    Hapus
                 </a>
             </td>
         </tr>
         <?php endforeach; ?>
     </table>
-    <a href="tambah_jurusan.php"><button>Tambah Jurusan</button></a>
+    <a href="tambah_jurusan.php">Tambah Jurusan</a>
 </div>
