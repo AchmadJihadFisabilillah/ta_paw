@@ -8,7 +8,7 @@ function val_required(&$errors, $field_name, $value, $message) {
 }
 //validasi pengecekan inputan user berupa angka
 function val_numeric(&$errors, $field_name, $value, $message) {
-    if (!empty(trim($value)) && !is_numeric($value)) {
+    if (!empty(trim($value)) && !preg_match("/^\d+$/",$value)) {
         $errors[$field_name] = $message;
     }
 }

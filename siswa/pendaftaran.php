@@ -69,8 +69,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     //validasi nisn(wajib diisi, berupa numeric dan harus 10 digit)
     val_required($errors, 'nisn', $nisn, 'NISN wajib diisi.');
-    val_numeric($errors, 'nisn', $nisn, 'NISN harus berupa angka.');
-    val_exact_length($errors, 'nisn', $nisn, 10, 'NISN harus 10 digit.');
+    if (!isset($errors['nisn'])) {
+        val_numeric($errors, 'nisn', $nisn, 'NISN harus berupa angka.');
+    }
+    if (!isset($errors['nisn'])) {
+        val_exact_length($errors, 'nisn', $nisn, 10, 'NISN harus 10 digit.');
+    }
 
     //validasi jenis kelamin(wajib diisi)
     val_required($errors, 'jenis_kelamin', $jenis_kelamin, 'Jenis Kelamin wajib dipilih.');
@@ -94,23 +98,44 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      //validasi jurusan(wajib diisi)
     val_required($errors, 'id_jurusan', $id_jurusan, 'Jurusan wajib dipilih.');
 
-     //validasi no hp siswa(wajib diisi beerupa numeric)
+     //validasi no hp siswa(wajib diisi berupa numeric)
     val_required($errors, 'no_hp_siswa', $no_hp_siswa, 'No HP Siswa wajib diisi.');
-    val_numeric($errors, 'no_hp_siswa', $no_hp_siswa, 'No HP Siswa harus berupa angka.');
+     if (!isset($errors['no_hp_siswa'])) {
+        val_numeric($errors, 'no_hp_siswa', $no_hp_siswa, 'No HP Siswa harus berupa angka.');
+    }
 
-    //validasi no hp siswa(wajib diisi beerupa numeric)
+    //validasi ayah(wajib diisi berupa numeric)
     val_required($errors, 'nama_ayah', $nama_ayah, 'Nama Ayah wajib diisi.');
     val_alpha($errors, 'nama_ayah', $nama_ayah, 'Nama Ayah harus berupa huruf dan spasi.'); 
 
-    //validasi no hp siswa(wajib diisi beerupa numeric)
+    //validasi No hp ortu(wajib diisi berupa numeric)
+    if (!isset($errors['no_hp_ayah'])) {
+        val_numeric($errors, 'no_hp_ayah', $no_hp_ayah, 'No Hp harus berupa angka.');
+    }
+    if (!isset($errors['no_hp_ayah'])) {
+         val_exact_length($errors, 'no_hp_ayah', $no_hp_ayah, 12, 'No Hp harus 12 digit.');
+    }
+
+    //validasi keadaan ayah (wajib diisi berupa numeric)
     val_required($errors, 'keadaan_ayah', $keadaan_ayah, 'Keadaan Ayah wajib diisi.');
 
-    //validasi no hp siswa(wajib diisi beerupa numeric)
+    //validasi ibu siswa(wajib diisi berupa huruf)
     val_required($errors, 'nama_ibu', $nama_ibu, 'Nama Ibu wajib diisi.');
     val_alpha($errors, 'nama_ibu', $nama_ibu, 'Nama Ibu harus berupa huruf dan spasi.'); 
 
+       //validasi No hp ortu(wajib diisi berupa numeric)
+    if (!isset($errors['no_hp_ibu'])) {
+        val_numeric($errors, 'no_hp_ibu', $no_hp_ibu, 'No Hp harus berupa angka.');
+    }
+    if (!isset($errors['no_hp_ibu'])) {
+         val_exact_length($errors, 'no_hp_ibu', $no_hp_ibu, 12, 'No Hp harus 12 digit.');
+    }
+
+
+    //validasi keadaan ibu(wajib diisi berupa huruf)
     val_required($errors, 'keadaan_ibu', $keadaan_ibu, 'Keadaan Ibu wajib diisi.');
 
+    //validasi files(wajib diisi dan menerima file jpg,jpeg,png dan pdf dengan ukuran 2 mb)
     val_file($errors,'kk',$_FILES['kk'],['jpg', 'jpeg', 'png', 'pdf'],2,'Format file tidak didukung.');
 
     val_file($errors,'akte',$_FILES['akte'],['jpg', 'jpeg', 'png', 'pdf'],2,'Format file tidak didukung.');
@@ -176,7 +201,7 @@ $kebutuhan=kebutuhan();
             <label>Agama : <span class="wajib">*</span></label>
             <input type="text" id="agama" name="agama" placeholder="Agama" value="<?= $agama?> ">
             <?php if(!empty($errors['agama'])): ?>
-            <span class="error"><?= $errors['agama'] ?></span>
+                <span class="error"><?= $errors['agama'] ?></span>
             <?php endif; ?>
         </div>
         
@@ -208,7 +233,7 @@ $kebutuhan=kebutuhan();
             <label for="hp_siswa">No HP Siswa : <span class="wajib">*</span></label>
             <input type="text" id="hp_siswa" name="no_hp_siswa" placeholder="No Hp Siswa" value="<?= $no_hp_siswa?>">
             <?php if(!empty($errors['no_hp_siswa'])): ?>
-            <span class="error"><?= $errors['no_hp_siswa'] ?></span>
+                <span class="error"><?= $errors['no_hp_siswa'] ?></span>
             <?php endif; ?>
         </div>
 
@@ -326,6 +351,9 @@ $kebutuhan=kebutuhan();
         <div class="form_isi">
             <label for="no_hp_ayah">No Telepon Ayah :</label>
             <input type="text" id="no_hp_ayah" name="no_hp_ayah" placeholder="No Hp Ayah" value="<?= $no_hp_ayah?>">
+            <?php if(!empty($errors['no_hp_ayah'])): ?>
+                <span class="error"><?= $errors['no_hp_ayah'] ?></span>
+            <?php endif; ?>
         </div>
 
         <div class="form_isi">
@@ -385,6 +413,9 @@ $kebutuhan=kebutuhan();
         <div class="form_isi">
             <label for="no_hp_ibu">No Telepon Ibu :</label>
             <input type="text" id="no_hp_ibu" name="no_hp_ibu" placeholder="No Hp Ibu" value="<?= $no_hp_ibu?>">
+            <?php if(!empty($errors['no_hp_ibu'])): ?>
+                <span class="error"><?= $errors['no_hp_ibu'] ?></span>
+            <?php endif; ?>
         </div>
 
         <div class="form_isi">
