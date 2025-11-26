@@ -1,4 +1,6 @@
+<!-- halaman untuk menambah kebutuhan baru -->
 <?php
+
     require_once "../database.php";
     require_once "../validasi.php";
     require_once "../includes/header.php";
@@ -6,10 +8,13 @@
 
     $errors=[];
     if($_SERVER["REQUEST_METHOD"]=="POST"){
+        // validasi kode kebutuhan
         val_required($errors,"kode_k",$_POST["kode_kebutuhan"],"Kode kebutuhan wajib diisi.");
         val_numeric($errors,"kode_k",$_POST["kode_kebutuhan"],"Kode kebutuhan harus berupa angka.");
+        // validasi nama kebutuhan
         val_required($errors,"nama_k",$_POST["nama_kebutuhan"],"Nama kebutuhan wajib diisi.");
         val_alphanumeric($errors,"nama_k",$_POST["nama_kebutuhan"],"Nama kebutuhan harus berupa huruf dan angka.");
+        // jika tidak ada error, masukkan data ke database
         if(empty($errors)){
             $stmnt=$pdo->prepare("INSERT INTO kebutuhan VALUES (:KODE_KEBUTUHAN,:NAMA_KEBUTUHAN)");
             $stmnt->execute([
@@ -20,34 +25,27 @@
         }
     }
 ?>
-<div class="tambah_jurusan">
+<div class="tambah_kebutuhan_container">
     <div>
         <form method="POST">
-        <h2>Tambah Kebutuhan</h2>
-        <table>
-            <tr>
-                <td>
-                    <label for="">Kode Kebutuhan :</label>
-                    <input type="text" name="kode_kebutuhan" value="<?= htmlspecialchars($_POST["kode_kebutuhan"] ?? '') ?>">
-                    <span><?= $errors["kode_k"] ?? ""; ?></span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="">Nama Kebutuhan :</label>
-                    <input type="text" name="nama_kebutuhan" value="<?= htmlspecialchars($_POST["nama_kebutuhan"] ?? '') ?>"> 
-                    <span><?= $errors["nama_k"] ?? ""; ?></span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <button type="submit">Tambah</button>
-                </td>
-                <td>
-                    <a href="kebutuhan.php">Kembali</a>
-                </td>
-            </tr>
-        </table>
+            <h2>Tambah Kebutuhan</h2>
+            
+            <div class="form-group">
+                <label for="kode_kebutuhan">Kode Kebutuhan:</label>
+                <input type="text" id="kode_kebutuhan" name="kode_kebutuhan" value="<?= htmlspecialchars($_POST["kode_kebutuhan"] ?? '') ?>">
+                <span class='error'><?= $errors["kode_k"] ?? ""; ?></span>
+            </div>
+            
+            <div class="form-group">
+                <label for="nama_kebutuhan">Nama Kebutuhan:</label>
+                <input type="text" id="nama_kebutuhan" name="nama_kebutuhan" value="<?= htmlspecialchars($_POST["nama_kebutuhan"] ?? '') ?>"> 
+                <span class='error'><?= $errors["nama_k"] ?? ""; ?></span>
+            </div>
+            
+            <div class="form-actions">
+                <button class="btn_kebutuhan btn-submit" type="submit">Tambah</button>
+                <a class="btn_kebutuhan btn-back" href="kebutuhan.php">Kembali</a>
+            </div>
         </form>
-     </div>
+    </div>
 </div>

@@ -26,7 +26,7 @@ if (!empty($_FILES['akte']['name'])) {
         $history_ijazah = $_FILES['ijazah']['name'];
     }
 if (!empty($_FILES['foto']['name'])) {
-        $history_pas = $_FILES['foto']['name'];
+        $history_foto = $_FILES['foto']['name'];
     }
 
 // validasi form pendaftaran siswa 
@@ -63,39 +63,49 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $file_ijazah = $_FILES['ijazah']['name'] ?? null;
     $file_foto = $_FILES['foto']['name'] ?? null;
 
+    // validasi nama(wajib diisi,berupa huruf)
     val_required($errors, 'nama_siswa', $nama_siswa, 'Nama Siswa wajib diisi.');
     val_alpha($errors, 'nama_siswa', $nama_siswa, 'Nama Siswa harus berupa huruf dan spasi.'); 
 
+    //validasi nisn(wajib diisi, berupa numeric dan harus 10 digit)
     val_required($errors, 'nisn', $nisn, 'NISN wajib diisi.');
     val_numeric($errors, 'nisn', $nisn, 'NISN harus berupa angka.');
     val_exact_length($errors, 'nisn', $nisn, 10, 'NISN harus 10 digit.');
 
+    //validasi jenis kelamin(wajib diisi)
     val_required($errors, 'jenis_kelamin', $jenis_kelamin, 'Jenis Kelamin wajib dipilih.');
 
+    //validasi agama(harus diisi dan berupa huruf)
     val_required($errors, 'agama', $agama, 'Agama wajib dipilih.');
     val_alpha($errors, 'agama', $agama, 'Agama harus berupa huruf dan spasi.'); 
 
+    //validasi tanggal(wajib diisi dengan format Year Month Day) 
     val_required($errors, 'tanggal_lahir', $tgl_lahir, 'Tanggal Lahir wajib diisi.');
     val_date_format($errors, 'tanggal_lahir', $tgl_lahir, 'Y-m-d', 'Tanggal Lahir harus dalam format YYYY-MM-DD.');
 
+    //validasi tempat lahir(wajib diisi beerupa huruf)
     val_required($errors, 'tempat_lahir', $tempat_lahir, 'Tempat Lahir wajib diisi.');
     val_alpha($errors, 'tempat_lahir', $tempat_lahir, 'Tempat Lahir harus berupa huruf dan spasi.'); 
 
+     //validasi Aalamat(wajib diisi berupa huruf angka)
     val_required($errors, 'alamat_siswa', $alamat_siswa, 'Alamat Siswa wajib diisi.');
     val_alphanumeric($errors, 'alamat_siswa', $alamat_siswa, 'Alamat harus berupa huruf dan spasi.'); 
 
+     //validasi jurusan(wajib diisi)
     val_required($errors, 'id_jurusan', $id_jurusan, 'Jurusan wajib dipilih.');
 
+     //validasi no hp siswa(wajib diisi beerupa numeric)
     val_required($errors, 'no_hp_siswa', $no_hp_siswa, 'No HP Siswa wajib diisi.');
     val_numeric($errors, 'no_hp_siswa', $no_hp_siswa, 'No HP Siswa harus berupa angka.');
 
-    // val_required($errors, 'kebutuhan', $kebutuhan, 'kebutuhan wajib diisi.');
-
+    //validasi no hp siswa(wajib diisi beerupa numeric)
     val_required($errors, 'nama_ayah', $nama_ayah, 'Nama Ayah wajib diisi.');
     val_alpha($errors, 'nama_ayah', $nama_ayah, 'Nama Ayah harus berupa huruf dan spasi.'); 
 
+    //validasi no hp siswa(wajib diisi beerupa numeric)
     val_required($errors, 'keadaan_ayah', $keadaan_ayah, 'Keadaan Ayah wajib diisi.');
 
+    //validasi no hp siswa(wajib diisi beerupa numeric)
     val_required($errors, 'nama_ibu', $nama_ibu, 'Nama Ibu wajib diisi.');
     val_alpha($errors, 'nama_ibu', $nama_ibu, 'Nama Ibu harus berupa huruf dan spasi.'); 
 
@@ -226,8 +236,7 @@ $kebutuhan=kebutuhan();
                 <input type="checkbox"
                     id="<?= $kbth['ID_KEBUTUHAN'] ?>"
                     name="kebutuhan[]"
-                    value="<?= $kbth['ID_KEBUTUHAN'] ?>"
-                    <?= in_array($kbth['ID_KEBUTUHAN'], $kebutuhan) ? 'checked' : '' ?>
+                    value="<?= $kbth['ID_KEBUTUHAN'] ?>" 
                 >
                 <span><?= $kbth['NAMA_KEBUTUHAN'] ?></span>
             </div>
@@ -296,7 +305,7 @@ $kebutuhan=kebutuhan();
         </div>
 
         <div class="form_isi">
-                <label for="">Keadaan Ayah : <span class="wajib">*</span></label>
+                <label>Keadaan Ayah : <span class="wajib">*</span></label>
                 <div class="radio-group-horizontal">
                     <input type="radio" id="masih_hidup" name="keadaan_ayah" value="masih hidup" <?= (isset($_POST['keadaan_ayah']) && $_POST['keadaan_ayah'] === 'masih hidup') ? 'checked' : '' ?>>
                     <label for="masih hidup">Masih Hidup</label>
@@ -310,22 +319,22 @@ $kebutuhan=kebutuhan();
         </div>
 
         <div class="form_isi">
-            <label for="">Alamat Ayah :</label>
+            <label for="alamat_ayah">Alamat Ayah :</label>
             <input type="text" id="alamat_ayah" name="alamat_ayah" placeholder="Alamat Ayah" value="<?= $alamat_ayah?>">
         </div>
 
         <div class="form_isi">
-            <label for="">No Telepon Ayah :</label>
+            <label for="no_hp_ayah">No Telepon Ayah :</label>
             <input type="text" id="no_hp_ayah" name="no_hp_ayah" placeholder="No Hp Ayah" value="<?= $no_hp_ayah?>">
         </div>
 
         <div class="form_isi">
-            <label for="">Pekerjaan Ayah :</label>
+            <label for="pekerjaan_ayah">Pekerjaan Ayah :</label>
             <input type="text" id="pekerjaan_ayah" name="pekerjaan_ayah" placeholder="Pekerjaan Ayah" value="<?= $pekerjaan_ayah?>">
         </div>
 
         <div class="form_isi">
-            <label for="">Gaji Ayah :</label>
+            <label for="gaji_ayah">Gaji Ayah :</label>
             <select name="gaji_ayah" id="gaji_ayah">
                 <option value="kosong">-- Pilih Gaji Ayah --</option>
                 <option value="1" <?= (isset($_POST['gaji_ayah']) && $_POST['gaji_ayah'] == '1') ? 'selected' : '' ?>>-- Kurang Dari Rp 500.000 --</option>
@@ -347,7 +356,7 @@ $kebutuhan=kebutuhan();
 
 
         <div class="form_isi">
-            <label for="nama_wali">Nama Ibu : <span class="wajib">*</span></label>
+            <label for="nama_ibu">Nama Ibu : <span class="wajib">*</span></label>
             <input type="text" id="nama_ibu" name="nama_ibu" placeholder="Nama Lengkap Ibu" value="<?= $nama_ibu?>">
             <?php if(!empty($errors['nama_ibu'])): ?>
             <span class="error"><?= $errors['nama_ibu'] ?></span>
@@ -355,7 +364,7 @@ $kebutuhan=kebutuhan();
         </div>
 
         <div class="form_isi">
-            <label for="">Keadaan Ibu : <span class="wajib">*</span></label>
+            <label>Keadaan Ibu : <span class="wajib">*</span></label>
                 <div class="radio-group-horizontal">
                     <input type="radio" id="masih_hidup" name="keadaan_ibu" value="masih hidup" <?= (isset($_POST['keadaan_ibu']) && $_POST['keadaan_ibu'] === 'masih hidup') ? 'checked' : '' ?>>
                     <label for="masih hidup">Masih Hidup</label>
@@ -369,22 +378,22 @@ $kebutuhan=kebutuhan();
         </div>
 
         <div class="form_isi">
-            <label for="">Alamat Ibu :</label>
+            <label for="alamat_ibu">Alamat Ibu :</label>
             <input type="text" id="alamat_ibu" name="alamat_ibu" placeholder="Alamat Ibu" value="<?= $alamat_ibu?>">
         </div>
 
         <div class="form_isi">
-            <label for="">No Telepon Ibu :</label>
+            <label for="no_hp_ibu">No Telepon Ibu :</label>
             <input type="text" id="no_hp_ibu" name="no_hp_ibu" placeholder="No Hp Ibu" value="<?= $no_hp_ibu?>">
         </div>
 
         <div class="form_isi">
-            <label for="">Pekerjaan Ibu :</label>
+            <label for="pekerjaan_ibu">Pekerjaan Ibu :</label>
             <input type="text" id="pekerjaan_ibu" name="pekerjaan_ibu" placeholder="Pekerjaan Ibu" value="<?= $pekerjaan_ibu?>">
         </div>
 
         <div class="form_isi">
-            <label for="">Gaji Ibu : </label>
+            <label for="gaji_ibu">Gaji Ibu : </label>
             <select name="gaji_ibu" id="gaji_ibu">
                 <option value="kosong">-- Pilih Gaji Ibu --</option>
                 <option value="1" <?= (isset($_POST['gaji_ibu']) && $_POST['gaji_ibu'] == '1') ? 'selected' : '' ?>>-- Kurang Dari Rp 500.000 --</option>

@@ -125,7 +125,7 @@ exit();
 
     <div class="profile-actions" style="margin-top:30px;">
         <a href="../pendaftaran.php" class="btn-link">Edit</a>
-        <a href="profil_siswa.php" class="btn-link btn-danger">Kembali</a>
+        <a href="../siswa/index.php" class="btn-link btn-danger">Kembali</a>
     </div>
 </div>
 <?php endforeach; ?>

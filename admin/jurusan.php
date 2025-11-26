@@ -1,3 +1,4 @@
+<!-- halaman untuk menampilkan daftar jurusan -->
 <?php
     require_once '../database.php';
     require_once '../includes/header.php';
@@ -5,6 +6,7 @@
     $jurusan=jurusan();
 ?>
 <div class="jurusan">
+    <div>
     <h1>Daftar Jurusan</h1>
     <table>
         <tr>
@@ -19,19 +21,16 @@
             <td><?= $data['NAMA_JURUSAN'] ?></td>
             <td><?= $data['KUOTA_JURUSAN'] ?></td>
             <td>
-                <a href="edit_jurusan.php?ID_JURUSAN=<?=$data['ID_JURUSAN']?>&KUOTA_JURUSAN=<?=$data['KUOTA_JURUSAN']?>">
-                    <button name="edit">
-                        Edit
-                    </button>
+                <a href="edit_jurusan.php?ID_JURUSAN=<?=$data['ID_JURUSAN']?>&KUOTA_JURUSAN=<?=$data['KUOTA_JURUSAN']?>" class="btn_a">
+                    Edit
                 </a>
-                <a href="hapus_jurusan.php?ID_JURUSAN=<?=$data['ID_JURUSAN']?>">
-                    <button name="hapus">
-                        Hapus
-                    </button>
+                <a href="hapus_jurusan.php?ID_JURUSAN=<?=$data['ID_JURUSAN']?>" class="btn_a hapus">
+                    Hapus
                 </a>
             </td>
         </tr>
         <?php endforeach; ?>
     </table>
-    <a href="tambah_jurusan.php"><button>Tambah Jurusan</button></a>
+    <a href="tambah_jurusan.php" class="btn_a">Tambah Jurusan</a>
+    </div>
 </div>

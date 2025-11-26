@@ -1,3 +1,4 @@
+<!-- halaman untuk menampilkan pendaftar -->
 <?php
 require_once '../includes/header.php';
 require_once '../includes/navbarAdmin.php';
@@ -24,15 +25,11 @@ $daftar=pendaftar();
                 <td><?=$row['NAMA_KEBUTUHAN']?></td>
                 <td><?=$row['KET_STATUS']?></td>
                 <td>
-                    <a href="edit_status.php?ID_PENDAFTARAN=<?=$row['ID_PENDAFTARAN']?>&kondisi=lulus">
-                        <button name="lulus">
+                    <a href="edit_status.php?ID_PENDAFTARAN=<?=$row['ID_PENDAFTARAN']?>&kondisi=lulus" class="btn_a">
                             Lulus
-                        </button>
                     </a>
-                    <a href="edit_status.php?ID_PENDAFTARAN=<?=$row['ID_PENDAFTARAN']?>&kondisi=gagal">
-                        <button name="gagal">
+                    <a href="edit_status.php?ID_PENDAFTARAN=<?=$row['ID_PENDAFTARAN']?>&kondisi=gagal" class="btn_a hapus">
                             Tidak Lulus
-                        </button>
                     </a>
                 </td>
             </tr>

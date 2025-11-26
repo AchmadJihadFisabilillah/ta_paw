@@ -16,6 +16,26 @@ a {
 a {
   color: #000;
 }
+.btn_a{
+  display: inline-block;
+  padding: 7px 15px;
+  border-radius: 15px;
+  background-color: #2196f3;
+  color: white;
+  font-size: 15px;
+  /* font-weight: bold; */
+  margin: 10px;
+}
+.btn_a:hover {
+  background-color: #83b3ea;
+}
+.btn_a.hapus{
+  background-color: #f44336;
+  color: white;
+}
+.btn_a.hapus:hover{
+  background-color: #ff6565;
+}
 /* header */
 .logo {
   font-size: 1.8rem;
@@ -28,6 +48,9 @@ a {
 .header {
   background: #ffff;
   padding-left: 1rem;
+}
+.header a {
+  font-weight: bolder;
 }
 /* navbar */
 
@@ -72,7 +95,7 @@ a {
   background-color: #83b3ea;
 }
 
-.top-sticky {
+header {
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -83,7 +106,7 @@ a {
 }
 
 .nav-link {
-  width: 200px;
+  width: 2000px;
 }
 
 .dropdown-content {
@@ -187,9 +210,9 @@ footer a:href {
   justify-content: center;
   align-items: center;
   background-color: #fff;
-  margin: 90px;
-  padding: 40px;
-  margin: 50px;
+  margin: 70px;
+  padding: 20px;
+  margin: 30px;
   border-radius: 15px;
   margin-left: 30%;
   margin-right: 30%;
@@ -244,9 +267,8 @@ footer a:href {
   align-items: center;
   background-color: #fff;
 
-  margin: 90px;
-  padding: 40px;
   margin: 20px;
+  padding: 20px;
   border-radius: 15px;
   margin-left: 30%;
   margin-right: 30%;
@@ -387,6 +409,14 @@ footer li {
   width: 80%;
   margin: 40px auto;
 }
+
+.jurusan div {
+  background-color: white;
+  width: 100%;
+  padding: 1% 2%;
+  border-radius: 10px;
+}
+
 .jurusan h1 {
   text-align: center;
   margin-bottom: 20px;
@@ -700,8 +730,15 @@ footer li {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 30px;
   gap: 30px;
+  background-color: white;
+  width: 800px;
+  height: 450px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 .container_admin > h1 {
   color: #1565c0;
@@ -751,6 +788,7 @@ footer li {
   padding: 20px;
   border-radius: 10px;
   width: 150px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 .admin_jurusan h3 {
   color: #1565c0;
@@ -784,6 +822,10 @@ footer li {
   margin: -30px -30px 30px -30px;
 }
 
+.form-group {
+  margin-bottom: 25px;
+}
+
 .edit_kouta label {
   display: block;
   text-align: left;
@@ -798,22 +840,18 @@ footer li {
   font-size: 16px;
   width: 100%;
   box-sizing: border-box;
-  margin-bottom: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
 }
 
-.edit_kouta table {
-  width: 100%;
+.form-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
 }
 
-.edit_kouta tr,
-td {
-  text-align: center;
-  padding-top: 10px;
-}
-
-.edit_kouta button {
+.form-actions button,
+.form-actions a {
   padding: 10px 25px;
   border: none;
   background-color: #2196f3;
@@ -822,17 +860,28 @@ td {
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  width: 100%;
+  width: 50%;
+  box-sizing: border-box;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.2s;
+}
+
+.form-actions button:hover,
+.form-actions a:hover {
+  background-color: #0d8bf2;
 }
 
 /* Tambah Jurusan */
+
 .tambah_jurusan {
   font-family: sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #f7f7f7;
-  margin: 50px auto;
+  margin: 10px auto;
   max-width: 500px;
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1), 0 5px 10px rgba(0, 0, 0, 0.05);
@@ -841,7 +890,7 @@ td {
 
 .tambah_jurusan > div {
   width: 100%;
-  padding: 30px;
+  padding: 20px;
 }
 
 .tambah_jurusan h2 {
@@ -862,27 +911,29 @@ td {
 }
 
 .tambah_jurusan input {
-  padding: 12px;
+  padding: 11px;
   height: auto;
   font-size: 16px;
   width: 100%;
   box-sizing: border-box;
-  margin-bottom: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
 }
 
-.tambah_jurusan table {
-  width: 100%;
+.error {
+  color: #dc3545;
+  font-size: 12px;
+  display: block;
+  margin-top: 5px;
 }
 
-.tambah_jurusan tr,
-td {
-  text-align: center;
-  padding-top: 10px;
+.form-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
 }
 
-.tambah_jurusan button {
+.btn_jumlah {
   padding: 10px 25px;
   border: none;
   background-color: #2196f3;
@@ -891,7 +942,15 @@ td {
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  width: 100%;
+  width: 50%;
+  box-sizing: border-box;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+}
+
+.btn_jumlah:hover {
+  background-color: #0d8bf2;
 }
 
 .kebutuhan {
@@ -1007,7 +1066,7 @@ td {
   background: #ffffff;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 40px 30px;
+  padding: 40px 20px;
 }
 .jurusan_siswa h1 {
   text-align: center;
@@ -1027,6 +1086,199 @@ td {
   text-align: center;
 }
 .jurusan_siswa table th {
+  background-color: #2196f3;
+  color: white;
+  font-weight: bold;
+}
+
+/* Tambah kebutuhan */
+.tambah_kebutuhan_container {
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f7f7;
+  margin: 50px auto;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1), 0 5px 10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.tambah_kebutuhan_container > div {
+  width: 100%;
+  padding: 30px;
+}
+
+.tambah_kebutuhan_container h2 {
+  background-color: #4caf50;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  padding: 15px 0;
+  margin: -30px -30px 30px -30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  padding: 0;
+}
+
+.tambah_kebutuhan_container label {
+  display: block;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.tambah_kebutuhan_container input {
+  padding: 12px;
+  height: auto;
+  font-size: 16px;
+  width: 100%; /* Dibuat 100% agar mengisi lebar form dengan benar */
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.error {
+  color: #dc3545;
+  font-size: 12px;
+  display: block;
+  margin-top: 5px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.btn_kebutuhan {
+  padding: 10px 25px;
+  border: none;
+  background-color: #2196f3;
+  color: white;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 50%;
+  box-sizing: border-box;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.2s;
+}
+
+.btn_kebutuhan:hover {
+  background-color: #0d8bf2;
+}
+
+/* Kenutuhan Admin */
+.kebutuhan {
+  width: 80%;
+  margin: 40px auto;
+}
+
+.kebutuhan div {
+  background-color: white;
+  width: 100%;
+  padding: 1% 2%;
+  border-radius: 10px;
+}
+
+.kebutuhan h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+.kebutuhan table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.kebutuhan table th,
+.kebutuhan table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+.kebutuhan table th {
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+}
+.kebutuhan button {
+  padding: 8px 15px;
+  margin: 5px;
+  border: none;
+  background-color: #2196f3;
+  color: white;
+  border-radius: 5px;
+}
+.kebutuhan button:hover {
+  background-color: #83b3ea;
+}
+.kebutuhan > button {
+  display: block;
+  margin: 20px auto;
+  background-color: #4caf50;
+}
+
+.btn_kebutuhan {
+  padding: 10px 25px;
+  border: none;
+  background-color: #2196f3;
+  color: white;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+}
+
+.btn_kebutuhan a {
+  padding: 10px 25px;
+  border: none;
+  background-color: #2196f3;
+  color: white;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Kebutuhan Siswa */
+.kebutuhan_siswa {
+  width: 80%;
+  margin: 40px auto;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 40px 20px;
+}
+.kebutuhan_siswa h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+.kebutuhan_siswa table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.kebutuhan_siswa table th,
+.kebutuhan_siswa table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+.kebutuhan_siswa table th {
   background-color: #2196f3;
   color: white;
   font-weight: bold;

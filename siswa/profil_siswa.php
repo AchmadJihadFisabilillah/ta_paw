@@ -38,18 +38,6 @@ $nama  = htmlspecialchars($user['USERNAME_SISWA'] ?? '-');
 $email = htmlspecialchars($user['EMAIL'] ?? '-');
 $foto  = $user['FOTO'] ?? '';
 ?>
-<!doctype html>
-<html lang="id">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Profil - <?php echo $nama; ?></title>
-
-    <!-- CSS khusus profil siswa -->
-    <link rel="stylesheet" href="assets/style.css">
-</head>
-<body>
-
 <div class="profile-wrapper">
     <div class="profile-card">
 
