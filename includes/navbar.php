@@ -7,7 +7,6 @@
 		<li><a href="#alur">Alur Pndaftaran Online</a></li>
 		<li><a href="#detail">Detial Pendaftaran</a></li>
   </ul>
-
 	<ul>
 		<li><a href="login.php" class="btn_a">Login</a></li>
 	</ul>
