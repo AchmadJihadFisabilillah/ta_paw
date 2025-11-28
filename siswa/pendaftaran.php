@@ -275,7 +275,6 @@ $kebutuhan=kebutuhan();
             <?php if (!empty($history_kk)): ?>
                 <p>Dipilih: <b><?= htmlspecialchars($history_kk) ?></b></p>
             <?php endif; ?>
-            <p>Penamaan file = nim</p>
         </div>
         
         <div class="form_isi">
@@ -287,7 +286,6 @@ $kebutuhan=kebutuhan();
                 <?php if (!empty($history_akte)): ?>
                     <p>Dipilih: <b><?= htmlspecialchars($history_akte) ?></b></p>
                 <?php endif; ?>
-                <p>Penamaan file = nim</p>
         </div>
                 
             <div class="form_isi">
@@ -299,7 +297,6 @@ $kebutuhan=kebutuhan();
                 <?php if (!empty($history_ijazah)): ?>
                     <p>Dipilih: <b><?= htmlspecialchars($history_ijazah) ?></b></p>
                  <?php endif; ?>
-            <p>Penamaan file = nim</p>
         </div>
         
         <div class="form_isi">
@@ -326,10 +323,10 @@ $kebutuhan=kebutuhan();
         <div class="form_isi">
                 <label>Keadaan Ayah : <span class="wajib">*</span></label>
                 <div class="radio-group-horizontal">
-                    <input type="radio" id="masih_hidup" name="keadaan_ayah" value="masih hidup" <?= (isset($_POST['keadaan_ayah']) && $_POST['keadaan_ayah'] === 'masih hidup') ? 'checked' : '' ?>>
+                    <input type="radio" id="masih_hidup" name="keadaan_ayah" value="Masih Hidup" <?= (isset($_POST['keadaan_ayah']) && $_POST['keadaan_ayah'] === 'masih hidup') ? 'checked' : '' ?>>
                     <label for="masih_hidup">Masih Hidup</label>
                     
-                    <input type="radio" id="sudah_tidak_ada" name="keadaan_ayah" value="meninggal" <?= (isset($_POST['keadaan_ayah']) && $_POST['keadaan_ayah'] === 'meninggal') ? 'checked' : '' ?>>
+                    <input type="radio" id="sudah_tidak_ada" name="keadaan_ayah" value="Sudah Tidak Ada" <?= (isset($_POST['keadaan_ayah']) && $_POST['keadaan_ayah'] === 'meninggal') ? 'checked' : '' ?>>
                     <label for="sta">Sudah Tidak Ada</label>
                     <?php if(!empty($errors['keadaan_ayah'])): ?>
                         <span class="error"><?= $errors['keadaan_ayah'] ?></span>
@@ -359,20 +356,20 @@ $kebutuhan=kebutuhan();
             <label for="gaji_ayah">Gaji Ayah :</label>
             <select name="gaji_ayah" id="gaji_ayah">
                 <option value="">-- Pilih Gaji Ayah --</option>
-                <option value="1" <?= (isset($_POST['gaji_ayah']) && $_POST['gaji_ayah'] == '1') ? 'selected' : '' ?>>-- Kurang Dari Rp 500.000 --</option>
-                <option value="2" <?= (isset($_POST['gaji_ayah']) && $_POST['gaji_ayah'] == '2') ? 'selected' : '' ?>>-- Rp 500.001 Sampai Rp 1.000.000 --</option>
-                <option value="3" <?= (isset($_POST['gaji_ayah']) && $_POST['gaji_ayah'] == '3') ? 'selected' : '' ?>>-- Rp 1.000.001 Sampai Rp 1.500.000 --</option>
-                <option value="4" <?= (isset($_POST['gaji_ayah']) && $_POST['gaji_ayah'] == '4') ? 'selected' : '' ?>>-- Rp 1.500.001 Sampai Rp 2.000.000 --</option>
-                <option value="5" <?= (isset($_POST['gaji_ayah']) && $_POST['gaji_ayah'] == '5') ? 'selected' : '' ?>>-- Rp 2.000.001 Sampai Rp 2.500.000 --</option>
-                <option value="6" <?= (isset($_POST['gaji_ayah']) && $_POST['gaji_ayah'] == '6') ? 'selected' : '' ?>>-- Rp 2.500.001 Sampai Rp 3.000.000 --</option>
-                <option value="7" <?= (isset($_POST['gaji_ayah']) && $_POST['gaji_ayah'] == '7') ? 'selected' : '' ?>>-- Rp 3.000.001 Sampai Rp 3.500.000 --</option>
-                <option value="8" <?= (isset($_POST['gaji_ayah']) && $_POST['gaji_ayah'] == '8') ? 'selected' : '' ?>>-- Rp 3.500.001 Sampai Rp 4.000.000 --</option>
-                <option value="9" <?= (isset($_POST['gaji_ayah']) && $_POST['gaji_ayah'] == '9') ? 'selected' : '' ?>>-- Rp 4.000.001 Sampai Rp 4.500.000 --</option>
-                <option value="10"<?= (isset($_POST['gaji_ayah']) && $_POST['gaji_ayah'] == '10') ? 'selected' : '' ?>>-- Rp 4.500.001 Sampai Rp 5.000.000 --</option>
-                <option value="11"<?= (isset($_POST['gaji_ayah']) && $_POST['gaji_ayah'] == '11') ? 'selected' : '' ?>>-- Rp 5.000.001 Sampai Rp 5.500.000 --</option>
-                <option value="12"<?= (isset($_POST['gaji_ayah']) && $_POST['gaji_ayah'] == '12') ? 'selected' : '' ?>>-- Rp 5.500.001 Sampai Rp 6.000.000 --</option>
-                <option value="13"<?= (isset($_POST['gaji_ayah']) && $_POST['gaji_ayah'] == '13') ? 'selected' : '' ?>>-- Rp 6.000.001 Sampai Rp 6.500.000 --</option>
-                <option value="14"<?= (isset($_POST['gaji_ayah']) && $_POST['gaji_ayah'] == '14') ? 'selected' : '' ?>>-- Rp 6.500.001 Sampai Rp 7.000.000 --</option>
+                <option value="Kurang Dari Rp 500.000" <?= (isset($_POST['gaji_ayah']) && $_POST['gaji_ayah'] == 'Kurang Dari Rp 500.000') ? 'selected' : '' ?>>-- Kurang Dari Rp 500.000 --</option>
+                <option value="Rp 500.001 Sampai Rp 1.000.000" <?= (isset($_POST['gaji_ayah']) && $_POST['gaji_ayah'] == 'Rp 500.001 Sampai Rp 1.000.000') ? 'selected' : '' ?>>-- Rp 500.001 Sampai Rp 1.000.000 --</option>
+                <option value="Rp 1.000.001 Sampai Rp 1.500.000" <?= (isset($_POST['gaji_ayah']) && $_POST['gaji_ayah'] == 'Rp 1.000.001 Sampai Rp 1.500.000') ? 'selected' : '' ?>>-- Rp 1.000.001 Sampai Rp 1.500.000 --</option>
+                <option value="Rp 1.500.001 Sampai Rp 2.000.000" <?= (isset($_POST['gaji_ayah']) && $_POST['gaji_ayah'] == 'Rp 1.500.001 Sampai Rp 2.000.000') ? 'selected' : '' ?>>-- Rp 1.500.001 Sampai Rp 2.000.000 --</option>
+                <option value="Rp 2.000.001 Sampai Rp 2.500.000" <?= (isset($_POST['gaji_ayah']) && $_POST['gaji_ayah'] == 'Rp 2.000.001 Sampai Rp 2.500.000') ? 'selected' : '' ?>>-- Rp 2.000.001 Sampai Rp 2.500.000 --</option>
+                <option value="Rp 2.500.001 Sampai Rp 3.000.000" <?= (isset($_POST['gaji_ayah']) && $_POST['gaji_ayah'] == 'Rp 2.500.001 Sampai Rp 3.000.000') ? 'selected' : '' ?>>-- Rp 2.500.001 Sampai Rp 3.000.000 --</option>
+                <option value="Rp 3.000.001 Sampai Rp 3.500.000" <?= (isset($_POST['gaji_ayah']) && $_POST['gaji_ayah'] == 'Rp 3.000.001 Sampai Rp 3.500.000') ? 'selected' : '' ?>>-- Rp 3.000.001 Sampai Rp 3.500.000 --</option>
+                <option value="Rp 3.500.001 Sampai Rp 4.000.000" <?= (isset($_POST['gaji_ayah']) && $_POST['gaji_ayah'] == 'Rp 3.500.001 Sampai Rp 4.000.000') ? 'selected' : '' ?>>-- Rp 3.500.001 Sampai Rp 4.000.000 --</option>
+                <option value="Rp 4.000.001 Sampai Rp 4.500.000" <?= (isset($_POST['gaji_ayah']) && $_POST['gaji_ayah'] == 'Rp 4.000.001 Sampai Rp 4.500.000') ? 'selected' : '' ?>>-- Rp 4.000.001 Sampai Rp 4.500.000 --</option>
+                <option value="Rp 4.500.001 Sampai Rp 5.000.000" <?= (isset($_POST['gaji_ayah']) && $_POST['gaji_ayah'] == 'Rp 4.500.001 Sampai Rp 5.000.000') ? 'selected' : '' ?>>-- Rp 4.500.001 Sampai Rp 5.000.000 --</option>
+                <option value="Rp 5.000.001 Sampai Rp 5.500.000" <?= (isset($_POST['gaji_ayah']) && $_POST['gaji_ayah'] == 'Rp 5.000.001 Sampai Rp 5.500.000') ? 'selected' : '' ?>>-- Rp 5.000.001 Sampai Rp 5.500.000 --</option>
+                <option value="Rp 5.500.001 Sampai Rp 6.000.000" <?= (isset($_POST['gaji_ayah']) && $_POST['gaji_ayah'] == 'Rp 5.500.001 Sampai Rp 6.000.000') ? 'selected' : '' ?>>-- Rp 5.500.001 Sampai Rp 6.000.000 --</option>
+                <option value="Rp 6.000.001 Sampai Rp 6.500.000" <?= (isset($_POST['gaji_ayah']) && $_POST['gaji_ayah'] == 'Rp 6.000.001 Sampai Rp 6.500.000') ? 'selected' : '' ?>>-- Rp 6.000.001 Sampai Rp 6.500.000 --</option>
+                <option value="Rp 6.500.001 Sampai Rp 7.000.000" <?= (isset($_POST['gaji_ayah']) && $_POST['gaji_ayah'] == 'Rp 6.500.001 Sampai Rp 7.000.000') ? 'selected' : '' ?>>-- Rp 6.500.001 Sampai Rp 7.000.000 --</option>
             </select>
         </div>
 
@@ -388,11 +385,11 @@ $kebutuhan=kebutuhan();
         <div class="form_isi">
             <label>Keadaan Ibu : <span class="wajib">*</span></label>
             <div class="radio-group-horizontal">
-                <input type="radio" id="ibu_masih_hidup" name="keadaan_ibu" value="masih hidup"
+                <input type="radio" id="ibu_masih_hidup" name="keadaan_ibu" value="Masih Hidup"
                     <?= (isset($_POST['keadaan_ibu']) && $_POST['keadaan_ibu'] === 'masih hidup') ? 'checked' : '' ?>>
                 <label for="ibu_masih_hidup">Masih Hidup</label>
 
-                <input type="radio" id="ibu_meninggal" name="keadaan_ibu" value="meninggal"
+                <input type="radio" id="ibu_meninggal" name="keadaan_ibu" value="Sudah Tidak Ada"
                     <?= (isset($_POST['keadaan_ibu']) && $_POST['keadaan_ibu'] === 'meninggal') ? 'checked' : '' ?>>
                 <label for="ibu_meninggal">Sudah Tidak Ada</label>
 
@@ -422,22 +419,22 @@ $kebutuhan=kebutuhan();
 
         <div class="form_isi">
             <label for="gaji_ibu">Gaji Ibu : </label>
-            <select name="gaji_ibu" id="gaji_ibu">
+             <select name="gaji_ibu" id="gaji_ibu">
                 <option value="">-- Pilih Gaji Ibu --</option>
-                <option value="1" <?= (isset($_POST['gaji_ibu']) && $_POST['gaji_ibu'] == '1') ? 'selected' : '' ?>>-- Kurang Dari Rp 500.000 --</option>
-                <option value="2" <?= (isset($_POST['gaji_ibu']) && $_POST['gaji_ibu'] == '2') ? 'selected' : '' ?>>-- Rp 500.001 Sampai Rp 1.000.000 --</option>
-                <option value="3" <?= (isset($_POST['gaji_ibu']) && $_POST['gaji_ibu'] == '3') ? 'selected' : '' ?>>-- Rp 1.000.001 Sampai Rp 1.500.000 --</option>
-                <option value="4" <?= (isset($_POST['gaji_ibu']) && $_POST['gaji_ibu'] == '4') ? 'selected' : '' ?>>-- Rp 1.500.001 Sampai Rp 2.000.000 --</option>
-                <option value="5" <?= (isset($_POST['gaji_ibu']) && $_POST['gaji_ibu'] == '5') ? 'selected' : '' ?>>-- Rp 2.000.001 Sampai Rp 2.500.000 --</option>
-                <option value="6" <?= (isset($_POST['gaji_ibu']) && $_POST['gaji_ibu'] == '6') ? 'selected' : '' ?>>-- Rp 2.500.001 Sampai Rp 3.000.000 --</option>
-                <option value="7" <?= (isset($_POST['gaji_ibu']) && $_POST['gaji_ibu'] == '7') ? 'selected' : '' ?>>-- Rp 3.000.001 Sampai Rp 3.500.000 --</option>
-                <option value="8" <?= (isset($_POST['gaji_ibu']) && $_POST['gaji_ibu'] == '8') ? 'selected' : '' ?>>-- Rp 3.500.001 Sampai Rp 4.000.000 --</option>
-                <option value="9" <?= (isset($_POST['gaji_ibu']) && $_POST['gaji_ibu'] == '9') ? 'selected' : '' ?>>-- Rp 4.000.001 Sampai Rp 4.500.000 --</option>
-                <option value="10"<?= (isset($_POST['gaji_ibu']) && $_POST['gaji_ibu'] == '10') ? 'selected' : '' ?>>-- Rp 4.500.001 Sampai Rp 5.000.000 --</option>
-                <option value="11"<?= (isset($_POST['gaji_ibu']) && $_POST['gaji_ibu'] == '11') ? 'selected' : '' ?>>-- Rp 5.000.001 Sampai Rp 5.500.000 --</option>
-                <option value="12"<?= (isset($_POST['gaji_ibu']) && $_POST['gaji_ibu'] == '12') ? 'selected' : '' ?>>-- Rp 5.500.001 Sampai Rp 6.000.000 --</option>
-                <option value="13"<?= (isset($_POST['gaji_ibu']) && $_POST['gaji_ibu'] == '13') ? 'selected' : '' ?>>-- Rp 6.000.001 Sampai Rp 6.500.000 --</option>
-                <option value="14"<?= (isset($_POST['gaji_ibu']) && $_POST['gaji_ibu'] == '14') ? 'selected' : '' ?>>-- Rp 6.500.001 Sampai Rp 7.000.000 --</option>
+                <option value="Kurang Dari Rp 500.000" <?= (isset($_POST['gaji_ibu']) && $_POST['gaji_ibu'] == 'Kurang Dari Rp 500.000') ? 'selected' : '' ?>>-- Kurang Dari Rp 500.000 --</option>
+                <option value="Rp 500.001 Sampai Rp 1.000.000" <?= (isset($_POST['gaji_ibu']) && $_POST['gaji_ibu'] == 'Rp 500.001 Sampai Rp 1.000.000') ? 'selected' : '' ?>>-- Rp 500.001 Sampai Rp 1.000.000 --</option>
+                <option value="Rp 1.000.001 Sampai Rp 1.500.000" <?= (isset($_POST['gaji_ibu']) && $_POST['gaji_ibu'] == 'Rp 1.000.001 Sampai Rp 1.500.000') ? 'selected' : '' ?>>-- Rp 1.000.001 Sampai Rp 1.500.000 --</option>
+                <option value="Rp 1.500.001 Sampai Rp 2.000.000" <?= (isset($_POST['gaji_ibu']) && $_POST['gaji_ibu'] == 'Rp 1.500.001 Sampai Rp 2.000.000') ? 'selected' : '' ?>>-- Rp 1.500.001 Sampai Rp 2.000.000 --</option>
+                <option value="Rp 2.000.001 Sampai Rp 2.500.000" <?= (isset($_POST['gaji_ibu']) && $_POST['gaji_ibu'] == 'Rp 2.000.001 Sampai Rp 2.500.000') ? 'selected' : '' ?>>-- Rp 2.000.001 Sampai Rp 2.500.000 --</option>
+                <option value="Rp 2.500.001 Sampai Rp 3.000.000" <?= (isset($_POST['gaji_ibu']) && $_POST['gaji_ibu'] == 'Rp 2.500.001 Sampai Rp 3.000.000') ? 'selected' : '' ?>>-- Rp 2.500.001 Sampai Rp 3.000.000 --</option>
+                <option value="Rp 3.000.001 Sampai Rp 3.500.000" <?= (isset($_POST['gaji_ibu']) && $_POST['gaji_ibu'] == 'Rp 3.000.001 Sampai Rp 3.500.000') ? 'selected' : '' ?>>-- Rp 3.000.001 Sampai Rp 3.500.000 --</option>
+                <option value="Rp 3.500.001 Sampai Rp 4.000.000" <?= (isset($_POST['gaji_ibu']) && $_POST['gaji_ibu'] == 'Rp 3.500.001 Sampai Rp 4.000.000') ? 'selected' : '' ?>>-- Rp 3.500.001 Sampai Rp 4.000.000 --</option>
+                <option value="Rp 4.000.001 Sampai Rp 4.500.000" <?= (isset($_POST['gaji_ibu']) && $_POST['gaji_ibu'] == 'Rp 4.000.001 Sampai Rp 4.500.000') ? 'selected' : '' ?>>-- Rp 4.000.001 Sampai Rp 4.500.000 --</option>
+                <option value="Rp 4.500.001 Sampai Rp 5.000.000" <?= (isset($_POST['gaji_ibu']) && $_POST['gaji_ibu'] == 'Rp 4.500.001 Sampai Rp 5.000.000') ? 'selected' : '' ?>>-- Rp 4.500.001 Sampai Rp 5.000.000 --</option>
+                <option value="Rp 5.000.001 Sampai Rp 5.500.000" <?= (isset($_POST['gaji_ibu']) && $_POST['gaji_ibu'] == 'Rp 5.000.001 Sampai Rp 5.500.000') ? 'selected' : '' ?>>-- Rp 5.000.001 Sampai Rp 5.500.000 --</option>
+                <option value="Rp 5.500.001 Sampai Rp 6.000.000" <?= (isset($_POST['gaji_ibu']) && $_POST['gaji_ibu'] == 'Rp 5.500.001 Sampai Rp 6.000.000') ? 'selected' : '' ?>>-- Rp 5.500.001 Sampai Rp 6.000.000 --</option>
+                <option value="Rp 6.000.001 Sampai Rp 6.500.000" <?= (isset($_POST['gaji_ibu']) && $_POST['gaji_ibu'] == 'Rp 6.000.001 Sampai Rp 6.500.000') ? 'selected' : '' ?>>-- Rp 6.000.001 Sampai Rp 6.500.000 --</option>
+                <option value="Rp 6.500.001 Sampai Rp 7.000.000" <?= (isset($_POST['gaji_ibu']) && $_POST['gaji_ibu'] == 'Rp 6.500.001 Sampai Rp 7.000.000') ? 'selected' : '' ?>>-- Rp 6.500.001 Sampai Rp 7.000.000 --</option>
             </select>
         </div>        
 

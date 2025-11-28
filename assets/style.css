@@ -1150,6 +1150,12 @@ footer li {
 .riwayat_pendaftaran h2 {
   color: #007bff;
   border-bottom: 2px solid #007bff;
+  margin-bottom: 15px;
+  gap: 400px;
+  display: flex;
+}
+
+.riwayat_pendaftaran h2 .status_pendaftaran {
   padding-bottom: 10px;
   margin-bottom: 15px;
 }
