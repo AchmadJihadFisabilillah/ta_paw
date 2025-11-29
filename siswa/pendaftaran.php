@@ -139,7 +139,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (empty($errors)) {
         proses_pendaftaran($_POST,$_FILES);
-        header("Location: index.php");
+        header("Location: pendaftaran_selesai.php");
         exit();
     }
 }
@@ -308,7 +308,6 @@ $kebutuhan=kebutuhan();
             <?php if (!empty($history_foto)): ?>
                 <p>Dipilih: <b><?= htmlspecialchars($history_foto) ?></b></p>
             <?php endif; ?>
-            <p>Penamaan file = nim</p>
         </div>
         <h2>Data Ayah & Ibu</h2>
         <hr>
@@ -436,11 +435,9 @@ $kebutuhan=kebutuhan();
                 <option value="Rp 6.000.001 Sampai Rp 6.500.000" <?= (isset($_POST['gaji_ibu']) && $_POST['gaji_ibu'] == 'Rp 6.000.001 Sampai Rp 6.500.000') ? 'selected' : '' ?>>-- Rp 6.000.001 Sampai Rp 6.500.000 --</option>
                 <option value="Rp 6.500.001 Sampai Rp 7.000.000" <?= (isset($_POST['gaji_ibu']) && $_POST['gaji_ibu'] == 'Rp 6.500.001 Sampai Rp 7.000.000') ? 'selected' : '' ?>>-- Rp 6.500.001 Sampai Rp 7.000.000 --</option>
             </select>
-        </div>        
-
+        </div>
         <div class="form-actions">
             <button type="submit">Kirim Pendaftaran</button>
         </div>
-        
     </form>
 </div>
