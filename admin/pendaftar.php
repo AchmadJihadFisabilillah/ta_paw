@@ -36,10 +36,10 @@ $daftar=pendaftar();
                 <td><?=$row['KET_STATUS']?></td>
                 <td>
                     <a href="edit_status.php?ID_PENDAFTARAN=<?=$row['ID_PENDAFTARAN']?>&kondisi=lulus" class="btn_a">
-                            Lulus
+                            Lolos
                     </a>
                     <a href="edit_status.php?ID_PENDAFTARAN=<?=$row['ID_PENDAFTARAN']?>&kondisi=gagal" class="btn_a hapus">
-                            Tidak Lulus
+                            Tidak Lolos
                     </a>
                 </td>
             </tr>
