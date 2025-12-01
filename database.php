@@ -190,7 +190,6 @@ function proses_pendaftaran( array $data,$file){
         $name_foto_new="siswa_".$data['id_akun']."_foto_.".$ext;
         $tmp_foto=$foto['tmp_name'];
         $tujuan_foto="../foto_pas/".$name_foto_new;
-        $type = $foto['kk']['type'];
         move_uploaded_file($tmp_foto,$tujuan_foto);
         
         $stmnt=$pdo->prepare
