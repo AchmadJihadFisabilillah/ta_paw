@@ -22,23 +22,13 @@
 ?>
 <div class="kh_kebutuhan">
   <div>
-<<<<<<< HEAD
-    <th>
-      <h1>Ada Siswa yang memiliki kebutuhan ini ?</h1>
-    </th>
-    <table>
-      <tr>
-        <td><?= $kebutuhan["NAMA_KEBUTUHAN"] ?></td>
-          <td class="khk_gap">
-=======
-      <h1>Ada Siswa Yang Memiliki Kebutuhan Ini ?</h1>
-          <p>Mata Pelajaran <span><?= $kebutuhan["NAMA_KEBUTUHAN"] ?></span></p>
-          <div class="khk_gap">
->>>>>>> fd0a59276f891902db988626bd7860d7091a5f5a
-            <a href="kebutuhan.php" class="khk_tidak">
-              Kembali
-            </a>
-          </div>
+    <h1>Ada Siswa Yang Memiliki Kebutuhan Ini ?</h1>
+    <p>Mata Pelajaran <span><?= $kebutuhan["NAMA_KEBUTUHAN"] ?></span></p>
+      <div class="khk_gap">
+        <a href="kebutuhan.php" class="khk_tidak">
+            Kembali
+        </a>
+      </div>
   </div>
 </div>
 

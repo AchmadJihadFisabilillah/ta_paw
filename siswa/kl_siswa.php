@@ -19,8 +19,10 @@
     <div>
         <h2>Apakah Anda Yakin Mau Keluar Dari Akun Ini</h2>
         <div class="kl_gap">
-            <a href="../index.php" class="ya_kl_s" name="keluar">Ya Laogut</a>
-            <a href="profil_siswa.php" class="tdk_kl_s" name="tidak">Tidak</a>
+            <form method="POST" >
+                <button class="ya_kl_s" name="keluar">Ya Laogut</button>
+                <button class="tdk_kl_s" name="tidak">Tidak</button>
+            </form>
         </div>
     </div>
 </div>
