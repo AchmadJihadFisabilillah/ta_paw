@@ -1685,12 +1685,12 @@ button[type="submit"].btn-link:hover {
 /* Konfirmasi Hapus Kebutuhan */
 .kh_kebutuhan {
   width: 60%;
-  margin: 50px auto;
+  margin: 100px auto;
 }
 
 .kh_kebutuhan div {
   background-color: white;
-  width: 100%;
+  width: 95%;
   padding: 1% 2%;
   border-radius: 10px;
 }
@@ -1700,21 +1700,19 @@ button[type="submit"].btn-link:hover {
   margin-bottom: 20px;
   color: #333;
 }
-.kh_kebutuhan table {
-  width: 100%;
-  border-collapse: collapse;
-  background: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+.kh_kebutuhan p {
+  font-weight: bold;
+  text-align: center;
+  font-size: 25px;
 }
 
-.kh_kebutuhan table th,
-.kh_kebutuhan table td {
-  padding: 12px 15px;
-  border: 1px solid #ddd;
-  text-align: center;
+.kh_kebutuhan span {
+  color: #2196f3;
 }
 
 .khk_gap {
+  margin-top: 20px;
   display: flex;
   gap: 25px;
   justify-content: center;
