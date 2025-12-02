@@ -1,4 +1,9 @@
 <?php
+// Mengecek apakah admin sudah login
+require_once 'cekLoginAdmin.php';
+// Koneksi ke databse dan fungsi Validasi
+require_once '../database.php';
+require_once "../validasi.php";
 
 $errors=[];
 if($_SERVER["REQUEST_METHOD"]=="POST"){
@@ -21,11 +26,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         header("Location:jurusan.php");
     }
 }
-// Mengecek apakah admin sudah login
-require_once 'cekLoginAdmin.php';
-// Koneksi ke databse dan fungsi Validasi
-require_once '../database.php';
-require_once "../validasi.php";
 
 // Header dan navbar admin
 require_once '../includes/header.php';

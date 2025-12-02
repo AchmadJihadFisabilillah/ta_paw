@@ -22,8 +22,8 @@ $list = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 function e($v){ return htmlspecialchars($v ?? '-', ENT_QUOTES, 'UTF-8');}
 
-<?php require_once "../includes/header.php";?>
-<?php require_once "../includes/navbarSiswa.php";?>
+php require_once "../includes/header.php";
+php require_once "../includes/navbarSiswa.php";
 
 if (!$list) {
 ?>
