@@ -1,6 +1,10 @@
 <?php
 // halaman untuk registrasi user baru
     require_once 'database.php';
+// Header dan navbar
+    require_once 'includes/header.php';
+    require_once 'includes/navbar.php';
+// fungsi validasi
     require_once 'validasi.php';
 
 $errors = []; // Wadah untuk menampung error
@@ -21,11 +25,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // validasi password
     val_required($errors, 'pass', $password, 'Password wajib diisi.');
-    val_password_format($errors, 'pass', $password, 8, 'Password minimal 8 karakter.');
+    val_password_format($errors, 'pass', $password, 8, 'Password minimal 8 karakter.'); 
 
     // validasi email
     val_required($errors, 'email', $email, 'Email wajib diisi.');
-    val_email($errors, 'email', $email, 'Format email salah.');
+    val_email($errors, 'email', $email, 'Format email salah.'); 
 
     // jika tidak ada error, daftarkan user
     if (empty($errors)) {
@@ -33,8 +37,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: login.php");
     }
 }
-    require_once 'includes/header.php';
-    require_once 'includes/navbar.php';
 
 ?>
 <div class="register">
@@ -75,9 +77,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </tr>
                 <tr>
                     <th>
-                    <button type="submit" name="submit">Submit</button>
-                    </th>
+                    <button type="submit" name="submit">Submit</button> 
+                    </th> 
                 </tr>
-            </table>
+            </table> 
     </form>
 </div>
