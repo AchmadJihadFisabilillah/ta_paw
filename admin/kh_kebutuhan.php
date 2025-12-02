@@ -22,6 +22,7 @@
 ?>
 <div class="kh_kebutuhan">
   <div>
+<<<<<<< HEAD
     <th>
       <h1>Ada Siswa yang memiliki kebutuhan ini ?</h1>
     </th>
@@ -29,12 +30,15 @@
       <tr>
         <td><?= $kebutuhan["NAMA_KEBUTUHAN"] ?></td>
           <td class="khk_gap">
+=======
+      <h1>Ada Siswa Yang Memiliki Kebutuhan Ini ?</h1>
+          <p>Mata Pelajaran <span><?= $kebutuhan["NAMA_KEBUTUHAN"] ?></span></p>
+          <div class="khk_gap">
+>>>>>>> fd0a59276f891902db988626bd7860d7091a5f5a
             <a href="kebutuhan.php" class="khk_tidak">
               Kembali
             </a>
-          </td>
-      </tr>
-    </table>
+          </div>
   </div>
 </div>
 
@@ -42,22 +46,16 @@
 
 <div class="kh_kebutuhan">
   <div>
-    <th>
       <h1>Apakah Anda Yakin Untuk Menghapus Kebutuhan Ini?</h1>
-    </th>
-    <table>
-      <tr>
-          <td><?= $kebutuhan["NAMA_KEBUTUHAN"] ?></td>
-          <td class="khk_gap">
+        <p>Mata Pelajaran <span><?= $kebutuhan["NAMA_KEBUTUHAN"] ?></span></p>
+          <div class="khk_gap">
             <a href="hapus_kebutuhan.php?ID_KEBUTUHAN=<?=$id_kebutuhan?>" class="khk_hapus">
               Hapus
             </a>
             <a href="kebutuhan.php" class="khk_tidak">
               Tidak
             </a>
-          </td>
-      </tr>
-    </table>
+          </div>
   </div>
 </div>
 <?php endif; ?>
