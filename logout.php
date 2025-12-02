@@ -10,7 +10,7 @@ if (isset($_POST['confirm']) && $_POST['confirm'] === 'yes') {
 
 // Jika user menekan tombol "TIDAK"
 if (isset($_POST['confirm']) && $_POST['confirm'] === 'no') {
-    header("Location: index.php");
+    header("Location: admin/index.php");
     exit;
 }
 ?>
