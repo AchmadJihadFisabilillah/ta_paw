@@ -27,6 +27,7 @@
     </th>
     <table>
       <tr>
+        <td><?= $kebutuhan["NAMA_KEBUTUHAN"] ?></td>
           <td class="khk_gap">
             <a href="kebutuhan.php" class="khk_tidak">
               Kembali
