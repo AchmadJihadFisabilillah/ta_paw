@@ -23,7 +23,7 @@
 <div class="kh_kebutuhan">
   <div>
     <h1>Ada Siswa Yang Memiliki Kebutuhan Ini ?</h1>
-    <p>Mata Pelajaran <span><?= $kebutuhan["NAMA_KEBUTUHAN"] ?></span></p>
+    <p><span><?= $kebutuhan["NAMA_KEBUTUHAN"] ?></span></p>
       <div class="khk_gap">
         <a href="kebutuhan.php" class="khk_tidak">
             Kembali
